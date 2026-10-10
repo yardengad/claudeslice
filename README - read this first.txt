@@ -54,6 +54,14 @@ TROUBLESHOOTING
 - The app should walk you through anything missing (Python, ffmpeg) with
   its own pop-up messages rather than failing silently — read those if it
   doesn't open.
+- Clicked "Video Slicer.exe" and genuinely nothing happened — no window,
+  no message? A file called "VideoSlicer_debug_log.txt" appears next to
+  "Video Slicer.exe" after every run. Open it with Notepad — it holds the
+  exact error from Python, if there was one (most often a missing piece
+  of the Python install, like tcl/tk). If that file is empty or also
+  missing, double-check you clicked "Video Slicer.exe" itself and not a
+  shortcut, and that your antivirus didn't quarantine it (check its
+  quarantine/history list).
 - Just installed ffmpeg and the app still can't find it? Video Slicer
   automatically checks ffmpeg's usual install folder on its own, so this
   is rare — if it still happens, sign out and back in once (or restart),
@@ -61,7 +69,9 @@ TROUBLESHOOTING
 - Prefer the command line? There's a standalone version in the
   "Advanced (command line)" folder — run it with --help for usage (needs
   Python; open a Command Prompt in that folder and run:
-  python video_slicer.py --help).
+  python video_slicer.py --help). Running the GUI this way also shows
+  errors directly: open Command Prompt in this folder and run
+  python app\video_slicer_gui.py
 
 Fast mode note: by default, cuts land on the exact second you asked for
 (a quick re-encode). There's also a "fast" checkbox that skips re-encoding
